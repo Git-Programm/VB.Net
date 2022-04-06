@@ -2,7 +2,7 @@ Imports System.Data.OleDb
 
 Public Class Form1
 
-    Dim conn As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\VAIBHAVB\VB.NET\TestDB.accdb")
+    Dim conn As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\?????")
 	
     Private Sub fetch()
         If conn.State = ConnectionState.Closed Then
@@ -10,7 +10,7 @@ Public Class Form1
         End If
 
         Try
-            Dim cmd As OleDbCommand = New OleDbCommand("select * from Vaibhavb", conn)
+            Dim cmd As OleDbCommand = New OleDbCommand("select * from ????", conn)
             cmd.ExecuteScalar()
 
             Dim da As OleDbDataAdapter = New OleDbDataAdapter(cmd)
@@ -30,7 +30,7 @@ Public Class Form1
             conn.Open()
         End If
         Try
-            Dim cmd As OleDbCommand = New OleDbCommand("insert into Vaibhavb values(" & tbID.Text & " , '" & tbName.Text & "')", conn)
+            Dim cmd As OleDbCommand = New OleDbCommand("insert into ???? values(" & tbID.Text & " , '" & tbName.Text & "')", conn)
             cmd.ExecuteNonQuery()
         Catch ex As Exception
             MessageBox.Show(ex.ToString())
@@ -47,7 +47,7 @@ Public Class Form1
         End If
 
         Try
-            Dim cmd As OleDbCommand = New OleDbCommand("update Vaibhavb set EmpName =  '" & tbName.Text & "' where ID = " & tbID.Text & "", conn)
+            Dim cmd As OleDbCommand = New OleDbCommand("update ???? set EmpName =  '" & tbName.Text & "' where ID = " & tbID.Text & "", conn)
             cmd.ExecuteNonQuery()
         Catch ex As Exception
             MessageBox.Show(ex.ToString())
@@ -62,7 +62,7 @@ Public Class Form1
         End If
 
         Try
-            Dim cmd As OleDbCommand = New OleDbCommand("delete from Vaibhavb where ID = " & tbID.Text & "", conn)
+            Dim cmd As OleDbCommand = New OleDbCommand("delete from ???? where ID = " & tbID.Text & "", conn)
             cmd.ExecuteNonQuery()
         Catch ex As Exception
             MessageBox.Show(ex.ToString())
@@ -79,7 +79,7 @@ Public Class Form1
         Try
             Dim dr As OleDbDataReader
 
-            Dim cmd As OleDbCommand = New OleDbCommand("select * from Vaibhavb where ID = " & tbID.Text & "", conn)
+            Dim cmd As OleDbCommand = New OleDbCommand("select * from ???? where ID = " & tbID.Text & "", conn)
             dr = cmd.ExecuteReader()
 
             dr.Read()
